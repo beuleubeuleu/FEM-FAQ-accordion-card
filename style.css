@@ -34,7 +34,7 @@ html {
     background: #FFF;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 
-    font-family: "Kumbh Sans";
+    font-family: "Kumbh Sans", sans-serif;
     font-weight: 400;
 
     padding: 2rem;
@@ -71,7 +71,6 @@ h1 {
 
     align-self: center;
 }
-
 .text ul {
     list-style-type: none;
     color: var(--dark-grayish-blue);
@@ -90,18 +89,35 @@ h1 {
 .toggleText {
     border: none;
     background: #FFF;
+    transition: transform 0.2s ;
 }
 .more {
-    display: none;
     color: var(--grayish-blue);
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
 }
+
+
+.open .question{
+    font-weight: 700;
+}
+.open button {
+    transform: rotateX(180deg);
+}
+.open span {
+    max-height: 4rem;
+    transition: max-height 0.2s ease-out;
+}
+
+
 
 .attribution {
     font-size: 11px;
     text-align: center;
     color: var(--dark-grayish-blue);
 }
-
 .attribution a {
     color: var(--soft-red);
 }
