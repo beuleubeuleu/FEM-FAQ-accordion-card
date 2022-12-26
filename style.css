@@ -26,13 +26,39 @@ img {
 html {
     background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)
     ) no-repeat;
-    height: 100%;
+    min-height: 100%;
     font-size: 12px;
+}
+
+.image-desktop {
+    display: none;
+    position: relative;
+    min-width: 50%
+}
+
+.image-desktop img {
+    position: absolute;
+}
+
+#desktop-shadow {
+    min-width: 715px;
+    left: -90%;
+    transform: translateY(-11%);
+
+}
+#desktop-main {
+    left: -5%;
+    bottom: 50%;
+    transform: translate(-15%, 50%);
+}
+#desktop-box {
+    top: 42%;
+    left: -29%;
 }
 
 .container {
     background: #FFF;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 400;
@@ -43,9 +69,11 @@ html {
 
     position: relative;
 }
+
 .image-mobile {
     height: 100px;
 }
+
 #main-image-mobile {
     width: 250px;
 
@@ -55,9 +83,10 @@ html {
     transform: translate(-50%);
     z-index: 1;
 }
+
 #shadow-mobile {
     position: absolute;
-    top:0;
+    top: 0;
     left: 50%;
     transform: translate(-50%);
 }
@@ -65,20 +94,24 @@ html {
 .text {
     flex-direction: column;
 }
+
 h1 {
     color: var(--dark-blue);
     margin: 2rem;
 
     align-self: center;
 }
+
 .text ul {
     list-style-type: none;
     color: var(--dark-grayish-blue);
 }
+
 .text ul li {
     padding: 1rem 0;
     border-bottom: 1px solid var(--light-gray-blue);
 }
+
 .question {
     display: flex;
     justify-content: space-between;
@@ -86,11 +119,13 @@ h1 {
 
     margin-bottom: 1rem;
 }
+
 .toggleText {
     border: none;
     background: #FFF;
-    transition: transform 0.2s ;
+    transition: transform 0.2s;
 }
+
 .more {
     color: var(--grayish-blue);
     display: block;
@@ -100,17 +135,18 @@ h1 {
 }
 
 
-.open .question{
+.open .question {
     font-weight: 700;
 }
+
 .open button {
     transform: rotateX(180deg);
 }
+
 .open span {
     max-height: 4rem;
     transition: max-height 0.2s ease-out;
 }
-
 
 
 .attribution {
@@ -118,6 +154,37 @@ h1 {
     text-align: center;
     color: var(--dark-grayish-blue);
 }
+
 .attribution a {
     color: var(--soft-red);
+}
+
+@media screen and (min-width: 900px) {
+    .image-mobile {
+        display: none;
+    }
+
+    .image-desktop {
+        display: block;
+    }
+
+    .container {
+        display: flex;
+        gap: 2rem;
+
+        width: 60%;
+        overflow: hidden;
+
+        margin: 10rem auto;
+        font-size: 1.5rem;
+    }
+
+    .text {
+        min-width: 50%;
+        padding-right: 5rem;
+    }
+    .text h1 {
+        align-self: flex-start;
+        margin:5rem 0;
+    }
 }
